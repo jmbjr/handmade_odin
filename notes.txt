@@ -1,0 +1,7 @@
+General Notes:
+- regularly rebuild Odin. #ToDo: consider adding an Odin rebuild as part of hmh build.bat
+
+
+episode 001
+https://www.youtube.com/watch?v=Ee3EtYb8d1o
+
