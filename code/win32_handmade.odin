@@ -9,20 +9,21 @@ import win32 "core:sys/windows"
 import "core:fmt"
 import "core:runtime"
 
-g_context : runtime.Context
-
+g_context : runtime.Context 
 
 main :: proc() {
     g_context = context
-    x:=foo()
+    x:=add(1.0,1.0)
     fmt.println("Hello Handmade")
+    fmt.println(x)
 }
 
 @(export) 
-@(link_name="foo")
-foo :: proc"system"() -> f32 {
+@(link_name="odin_add")
+add :: proc"system"(a,b :f32) -> f32 {
     context=g_context
-    fmt.println("needed")
-    return 5.0
+    sum : f32 = a + b
+    fmt.println("Adding:", a, "plus", b, "=", sum)
+    return sum
 }
 // int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow);
